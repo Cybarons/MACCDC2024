@@ -54,14 +54,11 @@ configure_ufw() {
     ufw default deny incoming
     ufw default allow outgoing
 
-    # Allow SSH
-    ufw allow ssh
-
     # Allow HTTP, HTTPS, SMTP, DNS, POP3, FTP, TFTP, NTP
     ufw allow http
     ufw allow https
     ufw allow smtp
-    ufw allow dns
+    ufw allow 53/udp
     ufw allow pop3
     ufw allow ftp
     ufw allow tftp
